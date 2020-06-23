@@ -1,6 +1,21 @@
 
 $(document).ready(function () {
     // TODO, consultas a las web services
+
+    val informacion ={
+        
+    };
+
+    $.get("https://api.covid19api.com/summary")
+        .done(function (val){
+
+            $('titulo-resumen-global').html(val);
+        })
+        .fail(function (err) {
+            console.log(err);
+            alert("ocurrió un error al cargar la página")
+
+        })
 });
 
 // Función para hacer el sort de un array
