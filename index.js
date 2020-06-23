@@ -5,8 +5,29 @@ $(document).ready(function () {
     // TODO, consultas a las web services
 
 
-    val informacion ={
-        
+    let val;
+    let informacion = {
+        "Global":" ",
+        "InfoGlobal":{
+            "NewConfirmed":" ",
+            "TotalConfirmed":" ",
+            "NewDeaths":" ",
+            "NewRecovered":" ",
+            "TotalRecovered": " ",
+        },
+        "Countries":[{
+            "Country": " ",
+            "CountryCode": " ",
+            "Slug": " ",
+            "NewConfirmed": " ",
+            "TotalConfirmed": " ",
+            "NewDeaths": " ",
+            "TotalDeaths": " ",
+            "NewRecovered": " ",
+            "TotalRecovered": " ",
+            "Date": " ",
+
+        }]
     };
 
     $.get("https://api.covid19api.com/summary")
