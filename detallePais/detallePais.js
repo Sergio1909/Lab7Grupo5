@@ -1,6 +1,8 @@
 
 $(document).ready(function () {
 
+
+
     // Metodo de obtención de parámetros
     const urlParams = new URLSearchParams(window.location.search);
     const name = urlParams.get('name');
@@ -9,4 +11,34 @@ $(document).ready(function () {
     $("#redirect-grafico").attr("href", '');
 
     // TODO: Consultas a la web service
+    $(".div-bandera").function() ;{
+
+        $.ajax({
+            method: "GET",
+            url: "https://www.countryflags.io/PE/flat/64.png"
+        }).done(function (msg) {
+            $(".div-bandera").html(msg);
+        }).fail(function (err) {
+            console.log(err);
+            alert("ocurrio un error");
+        });
+
+    };
+
+    $("#casos-pais").function() ;{
+
+        $.ajax({
+            method: "GET",
+            url: "https://api.covid19api.com/total/dayone/country/peru/status/confirmed"
+        }).done(function (msg) {
+            $("#casos-pais").html(msg);
+        }).fail(function (err) {
+            console.log(err);
+            alert("ocurrio un error");
+        });
+
+    };
+
+
+
 });

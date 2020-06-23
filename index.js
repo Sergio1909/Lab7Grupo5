@@ -1,5 +1,7 @@
 
 $(document).ready(function () {
+
+
     // TODO, consultas a las web services
 });
 
