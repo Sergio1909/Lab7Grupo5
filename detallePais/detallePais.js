@@ -29,8 +29,24 @@ $(document).ready(function () {
 
         $.ajax({
             method: "GET",
+            dataType: "json",
+            crossDomain: true,
             url: "https://api.covid19api.com/total/dayone/country/peru/status/confirmed"
-        }).done(function (msg) {
+        }).done(function (data) {
+            if(data.estado === "ok"){
+                var listaCasos = data.lista;
+                var contentHtml= "";
+                $.each(listaCasos , function (i,caso) {
+                    contentHtml += "<tr>";
+                    contentHtml += "<td>" + (i+1) + "</td>";
+                    contentHtml += "<td>" + caso.date + "</td>";
+                    contentHtml += "<td>" + caso.cases + "</td>";
+                    contentHtml += "<tr>";
+                });
+
+            }
+
+
             $("#casos-pais").html(msg);
         }).fail(function (err) {
             console.log(err);
