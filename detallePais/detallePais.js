@@ -11,6 +11,7 @@ $(document).ready(function () {
     $("#redirect-grafico").attr("href", '');
 
     // TODO: Consultas a la web service
+
     $(".div-bandera").function() ;{
 
         $.ajax({
@@ -55,6 +56,21 @@ $(document).ready(function () {
 
     };
 
+
+
+    var urll = "https://restcountries.eu/rest/v2/alpha/";
+    //se debe obtener la el codigo del pais(pe) y guardar en una variable
+    var codigo = "";
+    var url = urll + codigo;
+    $.ajax({
+        method: "get",
+        url : url
+        }
+    ).done(function (data) {
+
+    }) .fail(function (err) {
+
+    });
 
 
 });
